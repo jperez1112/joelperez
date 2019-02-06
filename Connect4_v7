@@ -1,0 +1,394 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/* 
+ * File:   main.cpp
+ * Author: Joel Perez
+ * Created on January 15, 2019, 5:31 PM
+ * Purpose: Connect4
+ */
+
+#include <iostream>
+
+
+using namespace std;
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {
+        //Declare Variables
+ char lttr,chc;
+ int x=7,a1=0,a2=0,a3=0,a4=0,a5=0,a6=0,b1=0,b2=0,b3=0,b4=0,b5=0,b6=0,
+    c1=0,c2=0,c3=0,c4=0,c5=0,c6=0,d1=0,d2=0,d3=0,d4=0,d5=0,
+    d6=0,e1=0,e2=0,e3=0,e4=0,e5=0,e6=0,f1=0,f2=0,f3=0,f4=0,
+    f5=0,f6=0,g1=0,g2=0,g3=0,g4=0,g5=0,g6=0;
+        //Setting the Board Game
+    cout<<"-------------"<<endl;
+    cout<<a6<<" "<<b6<<" "<<c6<<" "<<d6<<" "<<e6<<" "<<f6<<" "<<g6<<endl;
+    cout<<a5<<" "<<b5<<" "<<c5<<" "<<d5<<" "<<e5<<" "<<f5<<" "<<g5<<endl;
+    cout<<a4<<" "<<b4<<" "<<c4<<" "<<d4<<" "<<e4<<" "<<f4<<" "<<g4<<endl;
+    cout<<a3<<" "<<b3<<" "<<c3<<" "<<d3<<" "<<e3<<" "<<f3<<" "<<g3<<endl;
+    cout<<a2<<" "<<b2<<" "<<c2<<" "<<d2<<" "<<e2<<" "<<f2<<" "<<g2<<endl;
+    cout<<a1<<" "<<b1<<" "<<c1<<" "<<d1<<" "<<e1<<" "<<f1<<" "<<g1<<endl;
+    cout<<"-------------"<<endl;
+    cout<<"a"<<" "<<"b"<<" "<<"c"<<" "<<"d"<<" "<<"e"<<" "<<"f"<<" "<<"g"<<endl;
+for(;x<8;){      //Loop dies and program ends if Player 2 Wins
+        //Player 1
+    cout<<"Player 1 Go"<<endl; 
+    cin>>lttr;
+        //reject statement for full column
+    while(((lttr=='a'||lttr=='A')&&(a6>0))||((lttr=='b'||lttr=='B')&&(b6>0))||
+          ((lttr=='c'||lttr=='C')&&(c6>0))||((lttr=='d'||lttr=='D')&&(d6>0))||
+          ((lttr=='e'||lttr=='E')&&(e6>0))||((lttr=='f'||lttr=='F')&&(f6>0))||
+          ((lttr=='g'||lttr=='G')&&(g6>0))){                                     
+        cout<<"Location Full, Player 1 Pick Again"<<endl;
+        cin>>lttr;}
+        //reject statement for invalid characters
+    while((lttr>'g')||(lttr>47 && lttr<58)||(lttr>71 && lttr<91)){                
+        cout<<"Invalid Location, Player 1 Pick Again"<<endl;
+        cin>>lttr;}
+        //if column a is picked
+    if((lttr=='a')||(lttr=='A'))                                                
+    {
+        if(a5>0)
+            a6=1;
+        else if(a4>0)
+            a5=1;
+        else if(a3>0)
+            a4=1;
+        else if(a2>0)
+            a3=1;
+        else if(a1>0)
+            a2=1;
+        else
+            a1=1;       
+    }   
+        //if column b is picked
+    if((lttr=='b')||(lttr=='B'))                                                
+    {
+        if(b5>0)
+            b6=1;
+        else if(b4>0)
+            b5=1;
+        else if(b3>0)
+            b4=1;
+        else if(b2>0)
+            b3=1;
+        else if(b1>0)
+            b2=1;
+        else
+            b1=1;       
+    }
+        //if column c is picked
+    if((lttr=='c')||(lttr=='C'))                                                
+    {
+        if(c5>0)
+            c6=1;
+        else if(c4>0)
+            c5=1;
+        else if(c3>0)
+            c4=1;
+        else if(c2>0)
+            c3=1;
+        else if(c1>0)
+            c2=1;
+        else
+            c1=1;       
+    }   
+        //if column d is picked
+    if((lttr=='d')||(lttr=='D'))                                                
+    {
+        if(d5>0)
+            d6=1;
+        else if(d4>0)
+            d5=1;
+        else if(d3>0)
+            d4=1;
+        else if(d2>0)
+            d3=1;
+        else if(d1>0)
+            d2=1;
+        else
+            d1=1;       
+    }
+        //if column e is picked
+    if((lttr=='e')||(lttr=='E'))                                                
+    {
+        if(e5>0)
+            e6=1;
+        else if(e4>0)
+            e5=1;
+        else if(e3>0)
+            e4=1;
+        else if(e2>0)
+            e3=1;
+        else if(e1>0)
+            e2=1;
+        else
+            e1=1;       
+    }
+        //if column f is picked
+    if((lttr=='f')||(lttr=='F'))                                                
+    {
+        if(f5>0)
+            f6=1;
+        else if(f4>0)
+            f5=1;
+        else if(f3>0)
+            f4=1;
+        else if(f2>0)
+            f3=1;
+        else if(f1>0)
+            f2=1;
+        else
+            f1=1;       
+    }
+        //if column g is picked
+    if((lttr=='g')||(lttr=='G'))                                                
+    {
+        if(g5>0)
+            g6=1;
+        else if(g4>0)
+            g5=1;
+        else if(g3>0)
+            g4=1;
+        else if(g2>0)
+            g3=1;
+        else if(g1>0)
+            g2=1;
+        else
+            g1=1;       
+    }
+        //Updated Board Game
+    cout<<"-------------"<<endl;
+    cout<<a6<<" "<<b6<<" "<<c6<<" "<<d6<<" "<<e6<<" "<<f6<<" "<<g6<<endl;
+    cout<<a5<<" "<<b5<<" "<<c5<<" "<<d5<<" "<<e5<<" "<<f5<<" "<<g5<<endl;
+    cout<<a4<<" "<<b4<<" "<<c4<<" "<<d4<<" "<<e4<<" "<<f4<<" "<<g4<<endl;
+    cout<<a3<<" "<<b3<<" "<<c3<<" "<<d3<<" "<<e3<<" "<<f3<<" "<<g3<<endl;
+    cout<<a2<<" "<<b2<<" "<<c2<<" "<<d2<<" "<<e2<<" "<<f2<<" "<<g2<<endl;
+    cout<<a1<<" "<<b1<<" "<<c1<<" "<<d1<<" "<<e1<<" "<<f1<<" "<<g1<<endl;
+    cout<<"-------------"<<endl;
+    cout<<"a"<<" "<<"b"<<" "<<"c"<<" "<<"d"<<" "<<"e"<<" "<<"f"<<" "<<"g"<<endl;
+        //Victory Statement for Player 1
+    if((a1==1&&a2==1&&a3==1&&a4==1)||(a2==1&&a3==1&&a4==1&&a5==1)||             //Vertical Victories
+      (a3==1&&a4==1&&a5==1&&a6==1)||(b1==1&&b2==1&&b3==1&&b4==1)||
+      (b2==1&&b3==1&&b4==1&&b5==1)||(b3==1&&b4==1&&b5==1&&b6==1)||
+      (c1==1&&c2==1&&c3==1&&c4==1)||(c2==1&&c3==1&&c4==1&&c5==1)||
+      (c3==1&&c4==1&&c5==1&&c6==1)||(d1==1&&d2==1&&d3==1&&d4==1)||
+      (d2==1&&d3==1&&d4==1&&d5==1)||(d3==1&&d4==1&&d5==1&&d6==1)||
+      (e1==1&&e2==1&&e3==1&&e4==1)||(e2==1&&e3==1&&e4==1&&e5==1)||
+      (e3==1&&e4==1&&e5==1&&e6==1)||(f1==1&&f2==1&&f3==1&&f4==1)||
+      (f2==1&&f3==1&&f4==1&&f5==1)||(f3==1&&f4==1&&f5==1&&f6==1)||
+      (g1==1&&g2==1&&g3==1&&g4==1)||(g2==1&&g3==1&&g4==1&&g5==1)||
+      (g3==1&&g4==1&&g5==1&&g6==1)||                                           //Horizontal Victories
+      (a1==1&&b1==1&&c1==1&&d1==1)||(b1==1&&c1==1&&d1==1&&e1==1)||
+      (c1==1&&d1==1&&e1==1&&f1==1)||(d1==1&&e1==1&&f1==1&&g1==1)||
+      (a2==1&&b2==1&&c2==1&&d2==1)||(b2==1&&c2==1&&d2==1&&e2==1)||
+      (c2==1&&d2==1&&e2==1&&f2==1)||(d2==1&&e2==1&&f2==1&&g2==1)||
+      (a3==1&&b3==1&&c3==1&&d3==1)||(b3==1&&c3==1&&d3==1&&e3==1)||
+      (c3==1&&d3==1&&e3==1&&f3==1)||(d3==1&&e3==1&&f3==1&&g3==1)||
+      (a4==1&&b4==1&&c4==1&&d4==1)||(b4==1&&c4==1&&d4==1&&e4==1)||
+      (c4==1&&d4==1&&e4==1&&f4==1)||(d4==1&&e4==1&&f4==1&&g4==1)||
+      (a5==1&&b5==1&&c5==1&&d5==1)||(b5==1&&c5==1&&d5==1&&e5==1)||
+      (c5==1&&d5==1&&e5==1&&f5==1)||(d5==1&&e5==1&&f5==1&&g5==1)||
+      (a6==1&&b6==1&&c6==1&&d6==1)||(b6==1&&c6==1&&d6==1&&e6==1)||
+      (c6==1&&d6==1&&e6==1&&f6==1)||(d6==1&&e6==1&&f6==1&&g6==1)||             //Diagonal Victories
+      (a4==1&&b3==1&&c2==1&&d1==1)||(a5==1&&b4==1&&c3==1&&d2==1)||
+      (b4==1&&c3==1&&d2==1&&e1==1)||(a6==1&&b5==1&&c4==1&&d3==1)||
+      (b5==1&&c4==1&&d3==1&&e2==1)||(c4==1&&d3==1&&e2==1&&f1==1)||
+      (b6==1&&c5==1&&d4==1&&e3==1)||(c5==1&&d4==1&&e3==1&&f2==1)||
+      (d4==1&&e3==1&&f2==1&&g1==1)||(c6==1&&d5==1&&e4==1&&f3==1)||
+      (d5==1&&e4==1&&f3==1&&g2==1)||(d6==1&&e5==1&&f4==1&&g3==1)||
+      (d1==1&&e2==1&&f3==1&&g4==1)||(c1==1&&d2==1&&e3==1&&f4==1)||
+      (d2==1&&e3==1&&f4==1&&g5==1)||(b1==1&&c2==1&&d3==1&&e4==1)||
+      (c2==1&&d3==1&&e4==1&&f6==1)||(d3==1&&e4==1&&f5==1&&g6==1)||
+      (a1==1&&b2==1&&c3==1&&d4==1)||(b2==1&&c3==1&&d4==1&&e5==1)||
+      (c3==1&&d4==1&&e5==1&&f6==1)||(a2==1&&b3==1&&c4==1&&d5==1)||
+      (b3==1&&c4==1&&d5==1&&e6==1)||(a3==1&&b4==1&&c5==1&&d6==1)){
+        cout<<">>>>Player 1 Wins<<<<"<<endl;
+        x=9;}
+
+        //Player 2
+if(x<8){    //if statement is ignored and program ends when Player 1 wins
+    cout<<"Player 2 Go"<<endl;
+    cin>>lttr; 
+        //reject statement for full column
+    while(((lttr=='a'||lttr=='A')&&(a6>0))||((lttr=='b'||lttr=='B')&&(b6>0))||
+          ((lttr=='c'||lttr=='C')&&(c6>0))||((lttr=='d'||lttr=='D')&&(d6>0))||
+          ((lttr=='e'||lttr=='E')&&(e6>0))||((lttr=='f'||lttr=='F')&&(f6>0))||
+          ((lttr=='g'||lttr=='G')&&(g6>0))){                                     
+        cout<<"Location Full, Player 2 Pick Again"<<endl;
+        cin>>lttr;}                   
+        //reject statement for invalid characters
+    while((lttr>'g')||(lttr>47 && lttr<58)||(lttr>71 && lttr<91)){                 
+        cout<<"Invalid Location, Player 2 Pick Again"<<endl;
+        cin>>lttr;}
+        //if column a is picked
+    if((lttr=='a')||(lttr=='A'))                                                
+    {
+        if(a5>0)
+            a6=2;
+        else if(a4>0)
+            a5=2;
+        else if(a3>0)
+            a4=2;
+        else if(a2>0)
+            a3=2;
+        else if(a1>0)
+            a2=2;
+        else
+            a1=2;       
+    }       
+        //if column b is picked
+    if((lttr=='b')||(lttr=='B'))                                                
+    {
+        if(b5>0)
+            b6=2;
+        else if(b4>0)
+            b5=2;
+        else if(b3>0)
+            b4=2;
+        else if(b2>0)
+            b3=2;
+        else if(b1>0)
+            b2=2;
+        else
+            b1=2;       
+    }
+        //if column c is picked
+    if((lttr=='c')||(lttr=='C'))                                                
+    {
+        if(c5>0)
+            c6=2;
+        else if(c4>0)
+            c5=2;
+        else if(c3>0)
+            c4=2;
+        else if(c2>0)
+            c3=2;
+        else if(c1>0)
+            c2=2;
+        else
+            c1=2;       
+    }   
+        //if column d is picked
+    if((lttr=='d')||(lttr=='D'))                                                
+    {
+        if(d5>0)
+            d6=2;
+        else if(d4>0)
+            d5=2;
+        else if(d3>0)
+            d4=2;
+        else if(d2>0)
+            d3=2;
+        else if(d1>0)
+            d2=2;
+        else
+            d1=2;       
+    }
+        //if column e is picked
+    if((lttr=='e')||(lttr=='E'))                                                
+    {
+        if(e5>0)
+            e6=2;
+        else if(e4>0)
+            e5=2;
+        else if(e3>0)
+            e4=2;
+        else if(e2>0)
+            e3=2;
+        else if(e1>0)
+            e2=2;
+        else
+            e1=2;       
+    }
+        //if column f is picked
+    if((lttr=='f')||(lttr=='F'))                                                
+    {
+        if(f5>0)
+            f6=2;
+        else if(f4>0)
+            f5=2;
+        else if(f3>0)
+            f4=2;
+        else if(f2>0)
+            f3=2;
+        else if(f1>0)
+            f2=2;
+        else
+            f1=2;       
+    }
+        //if column g is picked
+    if((lttr=='g')||(lttr=='G'))                                                
+    {
+        if(g5>0)
+            g6=2;
+        else if(g4>0)
+            g5=2;
+        else if(g3>0)
+            g4=2;
+        else if(g2>0)
+            g3=2;
+        else if(g1>0)
+            g2=2;
+        else
+            g1=2;       
+    }
+        //Updated Board Game
+    cout<<"-------------"<<endl;
+    cout<<a6<<" "<<b6<<" "<<c6<<" "<<d6<<" "<<e6<<" "<<f6<<" "<<g6<<endl;
+    cout<<a5<<" "<<b5<<" "<<c5<<" "<<d5<<" "<<e5<<" "<<f5<<" "<<g5<<endl;
+    cout<<a4<<" "<<b4<<" "<<c4<<" "<<d4<<" "<<e4<<" "<<f4<<" "<<g4<<endl;
+    cout<<a3<<" "<<b3<<" "<<c3<<" "<<d3<<" "<<e3<<" "<<f3<<" "<<g3<<endl;
+    cout<<a2<<" "<<b2<<" "<<c2<<" "<<d2<<" "<<e2<<" "<<f2<<" "<<g2<<endl;
+    cout<<a1<<" "<<b1<<" "<<c1<<" "<<d1<<" "<<e1<<" "<<f1<<" "<<g1<<endl;
+    cout<<"-------------"<<endl;
+    cout<<"a"<<" "<<"b"<<" "<<"c"<<" "<<"d"<<" "<<"e"<<" "<<"f"<<" "<<"g"<<endl;
+    //Victory Statement for Player 1
+    if((a1==2&&a2==2&&a3==2&&a4==2)||(a2==2&&a3==2&&a4==2&&a5==2)||             //Vertical Victories
+      (a3==2&&a4==2&&a5==2&&a6==2)||(b1==2&&b2==2&&b3==2&&b4==2)||
+      (b2==2&&b3==2&&b4==2&&b5==2)||(b3==2&&b4==2&&b5==2&&b6==2)||
+      (c1==2&&c2==2&&c3==2&&c4==2)||(c2==2&&c3==2&&c4==2&&c5==2)||
+      (c3==2&&c4==2&&c5==2&&c6==2)||(d1==2&&d2==2&&d3==2&&d4==2)||
+      (d2==2&&d3==2&&d4==2&&d5==2)||(d3==2&&d4==2&&d5==2&&d6==2)||
+      (e1==2&&e2==2&&e3==2&&e4==2)||(e2==2&&e3==2&&e4==2&&e5==2)||
+      (e3==2&&e4==2&&e5==2&&e6==2)||(f1==2&&f2==2&&f3==2&&f4==2)||
+      (f2==2&&f3==2&&f4==2&&f5==2)||(f3==2&&f4==2&&f5==2&&f6==2)||
+      (g1==2&&g2==2&&g3==2&&g4==2)||(g2==2&&g3==2&&g4==2&&g5==2)||
+      (g3==2&&g4==2&&g5==2&&g6==2)||                                           //Horizontal Victories
+      (a1==2&&b1==2&&c1==2&&d1==2)||(b1==2&&c1==2&&d1==2&&e1==2)||
+      (c1==2&&d1==2&&e1==2&&f1==2)||(d1==2&&e1==2&&f1==2&&g1==2)||
+      (a2==2&&b2==2&&c2==2&&d2==2)||(b2==2&&c2==2&&d2==2&&e2==2)||
+      (c2==2&&d2==2&&e2==2&&f2==2)||(d2==2&&e2==2&&f2==2&&g2==2)||
+      (a3==2&&b3==2&&c3==2&&d3==2)||(b3==2&&c3==2&&d3==2&&e3==2)||
+      (c3==2&&d3==2&&e3==2&&f3==2)||(d3==2&&e3==2&&f3==2&&g3==2)||
+      (a4==2&&b4==2&&c4==2&&d4==2)||(b4==2&&c4==2&&d4==2&&e4==2)||
+      (c4==2&&d4==2&&e4==2&&f4==2)||(d4==2&&e4==2&&f4==2&&g4==2)||
+      (a5==2&&b5==2&&c5==2&&d5==2)||(b5==2&&c5==2&&d5==2&&e5==2)||
+      (c5==2&&d5==2&&e5==2&&f5==2)||(d5==2&&e5==2&&f5==2&&g5==2)||
+      (a6==2&&b6==2&&c6==2&&d6==2)||(b6==2&&c6==2&&d6==2&&e6==2)||
+      (c6==2&&d6==2&&e6==2&&f6==2)||(d6==2&&e6==2&&f6==2&&g6==2)||             //Diagonal Victories
+      (a4==2&&b3==2&&c2==2&&d1==2)||(a5==2&&b4==2&&c3==2&&d2==2)||
+      (b4==2&&c3==2&&d2==2&&e1==2)||(a6==2&&b5==2&&c4==2&&d3==2)||
+      (b5==2&&c4==2&&d3==2&&e2==2)||(c4==2&&d3==2&&e2==2&&f1==2)||
+      (b6==2&&c5==2&&d4==2&&e3==2)||(c5==2&&d4==2&&e3==2&&f2==2)||
+      (d4==2&&e3==2&&f2==2&&g1==2)||(c6==2&&d5==2&&e4==2&&f3==2)||
+      (d5==2&&e4==2&&f3==2&&g2==2)||(d6==2&&e5==2&&f4==2&&g3==2)||
+      (d1==2&&e2==2&&f3==2&&g4==2)||(c1==2&&d2==2&&e3==2&&f4==2)||
+      (d2==2&&e3==2&&f4==2&&g5==2)||(b1==2&&c2==2&&d3==2&&e4==2)||
+      (c2==2&&d3==2&&e4==2&&f6==2)||(d3==2&&e4==2&&f5==2&&g6==2)||
+      (a1==2&&b2==2&&c3==2&&d4==2)||(b2==2&&c3==2&&d4==2&&e5==2)||
+      (c3==2&&d4==2&&e5==2&&f6==2)||(a2==2&&b3==2&&c4==2&&d5==2)||
+      (b3==2&&c4==2&&d5==2&&e6==2)||(a3==2&&b4==2&&c5==2&&d6==2)){
+        cout<<">>>>Player 2 Wins<<<<"<<endl;
+        x=9;}}
+    }
+    
+    return 0;
+}
+
